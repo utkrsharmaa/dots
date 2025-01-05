@@ -12,6 +12,7 @@ return {
         "scss",
         "vim",
         "lua",
+        "rust",
       },
       query_linter = {
         enable = true,

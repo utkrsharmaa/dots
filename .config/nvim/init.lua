@@ -8,6 +8,34 @@ require("mason").setup({
   PATH = "append",
 })
 
+-- Setup LSP for rust-analyzer
+local lspconfig = require("lspconfig")
+
+-- rust-analyzer configuration
+lspconfig.rust_analyzer.setup({
+  cmd = { "/home/krsh/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer" }, -- Path to rust-analyzer binary
+  filetypes = { "rust" },
+  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = {
+        enable = true, -- Enable diagnostics from rust-analyzer
+      },
+      checkOnSave = {
+        command = "clippy", -- Use clippy for linting
+      },
+      cargo = {
+        allFeatures = true, -- Analyze with all Cargo features enabled
+      },
+      inlayHints = {
+        enable = true, -- Enable inlay hints
+        parameterHints = true,
+        typeHints = true,
+      },
+    },
+  },
+})
+
 -- Completion Plugin Setup
 local cmp = require("cmp")
 local lspkind = require("lspkind")
@@ -63,4 +91,44 @@ cmp.setup({
       end,
     }),
   },
+})
+
+-- LSP Diagnostics Options Setup
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = "",
+  })
+end
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  update_in_insert = true,
+  underline = true,
+  severity_sort = false,
+  float = {
+    border = "rounded",
+    source = true,
+    header = "Diagnostics",
+    prefix = function(diagnostics)
+      local diag_to_icon = {
+        [vim.diagnostic.severity.ERROR] = " ",
+        [vim.diagnostic.severity.WARN] = " ",
+        [vim.diagnostic.severity.INFO] = "",
+        [vim.diagnostic.severity.HINT] = " ",
+      }
+      return diag_to_icon[diagnostics.severity], ""
+    end,
+  },
+})
+
+sign({ name = "DiagnosticSignError", text = " " })
+sign({ name = "DiagnosticSignWarn", text = " " })
+sign({ name = "DiagnosticSignHint", text = "" })
+sign({ name = "DiagnosticSignInfo", text = " " })
+
+require("tiny-inline-diagnostic").setup({
+  preset = "simple",
 })
