@@ -16,3 +16,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(zoxide init bash)"
+eval $(keychain --eval --quiet ~/.ssh/key2025)
