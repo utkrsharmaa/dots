@@ -128,7 +128,3 @@ sign({ name = "DiagnosticSignError", text = " " })
 sign({ name = "DiagnosticSignWarn", text = " " })
 sign({ name = "DiagnosticSignHint", text = "" })
 sign({ name = "DiagnosticSignInfo", text = " " })
-
-require("tiny-inline-diagnostic").setup({
-  preset = "simple",
-})
