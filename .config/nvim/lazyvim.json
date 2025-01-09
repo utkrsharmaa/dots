@@ -1,7 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.nvim-cmp",
-    "lazyvim.plugins.extras.util.mini-hipatterns"
+    "lazyvim.plugins.extras.dap.core"
   ],
   "news": {
     "NEWS.md": "10960"

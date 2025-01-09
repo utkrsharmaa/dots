@@ -1,0 +1,30 @@
+# Rust projects
+target
+
+# Home dir
+.bun
+.cache
+.cargo
+.git
+.local
+.mozilla
+.npm
+.pki
+.rustup
+.ssh
+.subversion
+.zen
+Pictures/
+Downloads/
+Videos/
+
+# File types
+*.png
+*.jpg
+*.ico
+*.icns
+*.svg
+
+
+# JS TS
+node_modules
