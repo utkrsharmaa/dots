@@ -17,13 +17,6 @@ abbr -a -g gst git status
 command -q exa; and alias la="exa -abghl --git --color=automatic"
 command -q exa; and alias ll="exa -bghl --git --color=automatic"
 
-# Fisher!
-if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
-
 # add to ~/.config/fish/config.fish
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
