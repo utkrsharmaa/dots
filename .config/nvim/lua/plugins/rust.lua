@@ -1,19 +1,15 @@
 return {
   {
-    "Saecki/crates.nvim",
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
+  {
+    "saecki/crates.nvim",
+    tag = "stable",
     event = { "BufRead Cargo.toml" },
-    opts = {
-      completion = {
-        crates = {
-          enabled = true,
-        },
-      },
-      lsp = {
-        enabled = true,
-        actions = true,
-        completion = true,
-        hover = true,
-      },
-    },
+    config = function()
+      require("crates").setup({})
+    end,
   },
 }
