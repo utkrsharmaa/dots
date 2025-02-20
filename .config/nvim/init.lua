@@ -72,3 +72,12 @@ cmp.setup({
     }),
   },
 })
+
+require("presence").setup({
+  -- General options
+  auto_update = true, -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
+  main_image = "file", -- Main image display (either "neovim" or "file")
+  enable_line_number = false, -- Displays the current line number instead of the current project
+  debounce_timeout = 1, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
+  show_time = true, -- Show the timer
+})
