@@ -1,5 +1,22 @@
 require("config.lazy")
 
+vim.g.rustaceanvim = {
+  server = {
+    root_dir = vim.fn.getcwd(),
+    settings = {
+      ["rust-analyzer"] = {
+        rustc = {
+          source = "discover",
+        },
+        linkedProjects = {
+          "./Cargo.toml",
+          "clippy_dev/Cargo.toml",
+          "lintcheck/Cargo.toml",
+        },
+      },
+    },
+  },
+}
 -- Completion Plugin Setup
 local cmp = require("cmp")
 local lspkind = require("lspkind")
@@ -73,11 +90,18 @@ cmp.setup({
   },
 })
 
-require("presence").setup({
-  -- General options
-  auto_update = true, -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
-  main_image = "file", -- Main image display (either "neovim" or "file")
-  enable_line_number = false, -- Displays the current line number instead of the current project
-  debounce_timeout = 1, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
-  show_time = true, -- Show the timer
+-- treesitter
+require("nvim-treesitter.configs").setup({
+  ensure_installed = { "lua", "rust", "toml" },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  ident = { enable = true },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  },
 })

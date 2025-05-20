@@ -3,11 +3,9 @@
 -- Add any additional options here
 
 vim.g.root_spec = { "lsp", "cwd" }
+vim.o.autochdir = false
 vim.opt.shell = "/usr/bin/fish"
 vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "env",
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
+-- Treesitter folding
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
