@@ -1,11 +1,11 @@
 # Shell
 shell /usr/bin/fish
 # Font Configuration
-font_family SF Mono Semibold
+font_family Hack Nerd Font Mono
 font_size 11
 shell_integration no-cursor
 
 # BEGIN_KITTY_THEME
-# Jellybeans
+# Cherry Midnight
 include current-theme.conf
 # END_KITTY_THEME

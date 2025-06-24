@@ -8,11 +8,11 @@ vim.g.rustaceanvim = {
         rustc = {
           source = "discover",
         },
-        linkedProjects = {
-          "./Cargo.toml",
-          "clippy_dev/Cargo.toml",
-          "lintcheck/Cargo.toml",
-        },
+        -- linkedprojects = {
+        --  "./cargo.toml",
+        --  "clippy_dev/cargo.toml",
+        --  "lintcheck/cargo.toml",
+        -- },
       },
     },
   },
