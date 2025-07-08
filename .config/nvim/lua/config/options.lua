@@ -10,3 +10,15 @@ vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
 -- Treesitter folding
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- Syntax highlighting for all env filetypes
+vim.filetype.add({
+  extension = {
+    env = "sh",
+  },
+  filename = {
+    [".env"] = "sh",
+  },
+  pattern = {
+    ["%.env%.[%w_.-]+"] = "sh",
+  },
+})
