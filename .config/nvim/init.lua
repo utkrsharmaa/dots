@@ -105,3 +105,12 @@ require("nvim-treesitter.configs").setup({
     max_file_lines = nil,
   },
 })
+
+-- fix this fucking plugin showing hidden files for no fucking reason
+local do_not_reset_defaults = require("fzf-lua.defaults")
+
+require("fzf-lua").setup({
+  files = {
+    hidden = false,
+  },
+}, do_not_reset_defaults)
