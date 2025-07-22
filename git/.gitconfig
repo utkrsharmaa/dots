@@ -1,0 +1,19 @@
+[init]
+	defaultBranch = main
+[user]
+	email = utkrsharmaa@gmail.com
+	name = utkrsharmaa
+	signingKey = /home/kin/.ssh/work.pub
+[gpg]
+  format = ssh
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+	gpgSign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
+[core]
+	editor = nvim

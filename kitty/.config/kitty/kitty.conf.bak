@@ -1,0 +1,10 @@
+# Shell
+shell /usr/bin/fish
+# Font Configuration
+font_family GohuFont Nerd Font 11
+shell_integration no-cursor
+
+# BEGIN_KITTY_THEME
+# IR Black
+include current-theme.conf
+# END_KITTY_THEME
