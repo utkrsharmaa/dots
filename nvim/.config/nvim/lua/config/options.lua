@@ -18,15 +18,14 @@ vim.opt.grepprg =  "rg --vimgrep" -- use ripgrep if available
 vim.opt.grepformat = "%f:%l:%c:%m" -- filename, line num, column, content
 
 -- Search settings
-vim.opt ignorecase = true -- case-insensitive search
+vim.opt.ignorecase = true -- case-insensitive search
 vim.opt.smartcase = true -- case-sensitive if uppercase in search
-vim.opt hlsearch = false -- don't highlight search results
+vim.opt.hlsearch = false -- don't highlight search results
 vim.opt.incsearch = true -- show matches as you type
 
 -- Visual Settings
 vim.opt.termguicolors = true -- enable 24-bit colors
 vim.opt.signcolumn = "yes" -- always show sign column
-vim.opt.colorcolumn = "100" -- show column at 100 characters
 vim.opt.showmatch = true -- highlight matching bracket
 vim.opt.matchtime = 2 -- how long to show matching brackets
 vim.opt.completeopt = "menuone,noinsert,noselect" -- completion options
@@ -34,7 +33,7 @@ vim.opt.pumheight = 10 -- popup menu height
 vim.opt.pumblend = 10 -- popup menu transparency
 vim.opt.winblend = 0 -- floating window transparency
 vim.opt.conceallevel = 0 -- don't hide markup
-vim.opt.concealcursor = " " -- show markup even on cursor line
+vim.opt.concealcursor = "" -- show markup even on cursor line
 vim.opt.lazyredraw = false -- redraw while executing macros, better UX
 vim.opt.redrawtime = 10000 -- timeout for syntax highlighting redraw
 vim.opt.maxmempattern = 20000 -- max memory for pattern matching
@@ -74,11 +73,11 @@ vim.opt.clipboard:append("unnamedplus") -- use system clipboard
 vim.opt.modifiable = true -- allow editing buffers
 vim.opt.encoding = "UTF-8" -- use UTF-8 encoding
 vim.opt.wildmenu = true -- enable command-line completion menu
-vim.opt.wildmode = "longest:full, full" -- completion mode for commandline
+vim.opt.wildmode = "longest:full,full" -- completion mode for commandline
 vim.opt.wildignorecase = true -- case-insensitive tab completion in commands
 
 -- Cursor Settings
-vim.opt.guicursor {
+vim.opt.guicursor = {
 	"n-v-c:block", -- Normal, Visual, Command-line
 	"i-ci-ve:block", -- Insert, Command-line Insert, Visual-exclusive
 	"r-cr:hor20", -- Replace, Command-line Replace
