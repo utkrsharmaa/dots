@@ -3,7 +3,7 @@
 [user]
 	email = utkrsharmaa@gmail.com
 	name = utkrsharmaa
-	signingKey = /home/kin/.ssh/work.pub
+	signingKey = /home/utkarsh/.ssh/work.pub
 [gpg]
   format = ssh
 [filter "lfs"]
