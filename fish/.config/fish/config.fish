@@ -8,11 +8,6 @@ set -x SKIM_DEFAULT_COMMAND "fd --type f"
 # Ensure that Cargo binaries are in the PATH
 set PATH $HOME/.cargo/bin/ $PATH
 
-# Helpful expansions
-abbr -a -g gp git push
-abbr -a -g gc git commit -asm
-abbr -a -g gst git status
-
 # Helpful aliases
 command -q exa; and alias la="exa -abghl --git --color=automatic"
 command -q exa; and alias ll="exa -bghl --git --color=automatic"
