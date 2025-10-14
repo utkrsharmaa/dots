@@ -1,5 +1,8 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export ANDROID_HOME:/home/utkarsh/Android/Sdk/
+SETUVAR --export CHROME_EXECUTABLE:/usr/bin/chromium
+SETUVAR --export JAVA_HOME:/opt/android\x2dstudio/jbr/
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:5f5f5f
 SETUVAR fish_color_cancel:ff5555\x1e\x2d\x2dreverse
@@ -40,4 +43,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d44475a
 SETUVAR fish_pager_color_selected_completion:f8f8f2
 SETUVAR fish_pager_color_selected_description:6272a4
 SETUVAR fish_pager_color_selected_prefix:8be9fd
-SETUVAR fish_user_paths:/home/krsh/\x2ebun/bin
+SETUVAR fish_user_paths:/home/utkarsh/develop/flutter/bin\x1e/home/utkarsh/Android/Sdk//cmdline\x2dtools/latest/bin/\x1e/home/utkarsh/Android/Sdk//platform\x2dtools/\x1e/opt/android\x2dstudio/jbr//bin/\x1e/home/krsh/\x2ebun/bin
